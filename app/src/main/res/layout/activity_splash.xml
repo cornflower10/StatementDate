@@ -5,7 +5,7 @@
     android:id="@+id/reveal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SplashActivity"
+    tools:context="com.nightonke.date.activity.SplashActivity"
     android:background="@color/white"
     >
 
@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/my_blue"
         />
 
     <LinearLayout
@@ -45,7 +44,7 @@
                 android:id="@+id/image"
                 android:layout_height="48dp"
                 android:layout_width="48dp"
-                android:src="@drawable/cocoin_logo"
+                android:src="@drawable/blue_icon"
                 />
 
             <LinearLayout

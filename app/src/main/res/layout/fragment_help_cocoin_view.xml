@@ -48,7 +48,6 @@
                         android:textColor="@color/my_blue"
                         android:textSize="15sp"
                         android:padding="10dp"
-                        android:text="@string/help_cocoin_content_1"
                         />
 
                     <LinearLayout
@@ -74,7 +73,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_2"
                             />
 
                     </LinearLayout>
@@ -102,7 +100,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_3"
                             />
 
                     </LinearLayout>
@@ -130,7 +127,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_4"
                             />
 
                     </LinearLayout>
@@ -158,7 +154,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_5"
                             />
 
                     </LinearLayout>
@@ -186,7 +181,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_6"
                             />
 
                     </LinearLayout>
@@ -214,7 +208,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_7"
                             />
 
                     </LinearLayout>
@@ -242,7 +235,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_8"
                             />
 
                     </LinearLayout>
@@ -270,7 +262,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_9"
                             />
 
                     </LinearLayout>
@@ -298,7 +289,6 @@
                             android:textSize="15sp"
                             android:padding="10dp"
                             android:layout_marginLeft="10dp"
-                            android:text="@string/help_cocoin_content_10"
                             />
 
                     </LinearLayout>
@@ -312,7 +302,6 @@
                         android:textColor="@color/my_blue"
                         android:textSize="15sp"
                         android:padding="10dp"
-                        android:text="@string/help_cocoin_content_11"
                         />
 
                 </LinearLayout>

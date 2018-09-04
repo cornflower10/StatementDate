@@ -11,8 +11,7 @@
         android:layout_gravity="center"
         android:background="@null"
         android:enabled="false"
-        app:vc_endDrawable="@drawable/ic_expand_more_to_expand_less"
         app:vc_foregroundTint="#42000000"
-        app:vc_startDrawable="@drawable/ic_expand_less_to_expand_more"/>
+       />
 
 </merge>

@@ -62,7 +62,7 @@
                     android:orientation="vertical"
                     >
 
-                    <com.nightonke.saver.ui.CoCoinScrollableViewPager
+                    <com.nightonke.date.ui.StatementDateScrollableViewPager
                         android:id="@+id/edit_pager"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
 
                 </LinearLayout>
 
-                <com.nightonke.saver.ui.MyGridView
+                <com.nightonke.date.ui.MyGridView
                     android:id="@+id/gridview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
