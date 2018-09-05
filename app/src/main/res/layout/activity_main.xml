@@ -93,6 +93,15 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/banner_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="90dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="0.5dp"
+                android:paddingRight="0.5dp" >
+            </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5dp"

@@ -3,6 +3,7 @@ package com.nightonke.date.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Looper;
@@ -18,10 +19,16 @@ import com.nightonke.date.model.RecordManager;
 import com.nightonke.date.util.StatementDateUtil;
 import com.nightonke.saver.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
 import io.codetail.widget.RevealFrameLayout;
+import lecho.lib.hellocharts.model.Line;
 import lecho.lib.hellocharts.model.LineChartData;
+import lecho.lib.hellocharts.model.PointValue;
+import lecho.lib.hellocharts.model.ValueShape;
 import lecho.lib.hellocharts.view.LineChartView;
 
 public class SplashActivity extends Activity {
@@ -51,50 +58,49 @@ public class SplashActivity extends Activity {
 
         mContext = this;
 
-//        chart = (LineChartView) findViewById(R.id.chart);
-//        List<Line> lines = new ArrayList<Line>();
-//        for (int i = 0; i < NUMBER_OF_LINES; ++i) {
-//
-//            List<PointValue> values = new ArrayList<PointValue>();
-//            values.add(new PointValue(0, 0));
-//            values.add(new PointValue(1, 15));
-//            values.add(new PointValue(2, 10));
-//            values.add(new PointValue(3, 23));
-//            values.add(new PointValue(3.5f, 48));
-//            values.add(new PointValue(5, 60));
-//
-//            Line line = new Line(values);
-//            line.setColor(Color.WHITE);
-//            line.setShape(ValueShape.CIRCLE);
-//            line.setCubic(false);
-//            line.setFilled(false);
-//            line.setHasLabels(false);
-//            line.setHasLabelsOnlyForSelected(false);
-//            line.setHasLines(true);
-//            line.setHasPoints(true);
-//            lines.add(line);
-//        }
-//        data = new LineChartData(lines);
-//        data.setBaseValue(Float.NEGATIVE_INFINITY);
-//        chart.setLineChartData(data);
-//
-//        image = (ImageView)findViewById(R.id.image);
-//        appName = (TextView)findViewById(R.id.app_name);
-//        appName.setTypeface(StatementDateUtil.getInstance().typefaceLatoLight);
-//        loadingText = (TextView)findViewById(R.id.loading_text);
-//        loadingText.setTypeface(StatementDateUtil.getInstance().typefaceLatoLight);
-//
-//        reveal = (RevealFrameLayout)findViewById(R.id.reveal);
+        chart = (LineChartView) findViewById(R.id.chart);
+        List<Line> lines = new ArrayList<Line>();
+        for (int i = 0; i < NUMBER_OF_LINES; ++i) {
+
+            List<PointValue> values = new ArrayList<PointValue>();
+            values.add(new PointValue(0, 0));
+            values.add(new PointValue(1, 15));
+            values.add(new PointValue(2, 10));
+            values.add(new PointValue(3, 23));
+            values.add(new PointValue(3.5f, 48));
+            values.add(new PointValue(5, 60));
+
+            Line line = new Line(values);
+            line.setColor(Color.WHITE);
+            line.setShape(ValueShape.CIRCLE);
+            line.setCubic(false);
+            line.setFilled(false);
+            line.setHasLabels(false);
+            line.setHasLabelsOnlyForSelected(false);
+            line.setHasLines(true);
+            line.setHasPoints(true);
+            lines.add(line);
+        }
+        data = new LineChartData(lines);
+        data.setBaseValue(Float.NEGATIVE_INFINITY);
+        chart.setLineChartData(data);
+
+        image = (ImageView)findViewById(R.id.image);
+        appName = (TextView)findViewById(R.id.app_name);
+        appName.setTypeface(StatementDateUtil.getInstance().typefaceLatoLight);
+        loadingText = (TextView)findViewById(R.id.loading_text);
+        loadingText.setTypeface(StatementDateUtil.getInstance().typefaceLatoLight);
+
+        reveal = (RevealFrameLayout)findViewById(R.id.reveal);
         ly = (LinearLayout)findViewById(R.id.ly);
 
-//        new InitData().execute();
-        ad();
+        new InitData().execute();
     }
 
 
     private void ad(){
         AdViewSpreadManager adViewBIDSpread = new AdViewSpreadManager
-                (mContext,"SDK20161629040641z7snyxkrbndasty",ly);
+                (mContext,"SDK20181104110908yifrg69psb1mqz3",ly);
 // 设置顶部倒计时通知方式，默认不通知
         adViewBIDSpread.setSpreadNotifyType(AdViewSpreadManager.NOTIFY_COUNTER_NULL);
 // 设置开屏广告 logo
@@ -201,7 +207,7 @@ public class SplashActivity extends Activity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus && !hasAnimationStarted) {
-//            startCircularReveal();
+            startCircularReveal();
         }
     }
 

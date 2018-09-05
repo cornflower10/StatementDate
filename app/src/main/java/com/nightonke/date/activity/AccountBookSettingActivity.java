@@ -334,7 +334,7 @@ public class AccountBookSettingActivity extends AppCompatActivity
         User user = BmobUser.getCurrentUser(mContext, User.class);
         if (user == null) {
             new MaterialDialog.Builder(this)
-                    .iconRes(R.drawable.cocoin_logo)
+                    .iconRes(R.mipmap.ic_launcher)
                     .typeface(StatementDateUtil.GetTypeface(), StatementDateUtil.GetTypeface())
                     .limitIconToDefaultSize() // limits the displayed icon size to 48dp
                     .title(R.string.login_first_title)
@@ -354,7 +354,7 @@ public class AccountBookSettingActivity extends AppCompatActivity
             return;
         }
         new MaterialDialog.Builder(this)
-                .iconRes(R.drawable.cocoin_logo)
+                .iconRes(R.mipmap.ic_launcher)
                 .typeface(StatementDateUtil.GetTypeface(), StatementDateUtil.GetTypeface())
                 .limitIconToDefaultSize() // limits the displayed icon size to 48dp
                 .title(R.string.change_logo_title)
@@ -606,7 +606,7 @@ public class AccountBookSettingActivity extends AppCompatActivity
         if (!SettingManager.getInstance().getLoggenOn()) {
             // register or log on
             new MaterialDialog.Builder(this)
-                    .iconRes(R.drawable.cocoin_logo)
+                    .iconRes(R.mipmap.ic_launcher)
                     .typeface(StatementDateUtil.GetTypeface(), StatementDateUtil.GetTypeface())
                     .limitIconToDefaultSize() // limits the displayed icon size to 48dp
                     .title(R.string.welcome)
@@ -631,7 +631,7 @@ public class AccountBookSettingActivity extends AppCompatActivity
         } else {
             // log out or user operate
             new MaterialDialog.Builder(this)
-                    .iconRes(R.drawable.cocoin_logo)
+                    .iconRes(R.mipmap.ic_launcher)
                     .typeface(StatementDateUtil.GetTypeface(), StatementDateUtil.GetTypeface())
                     .limitIconToDefaultSize() // limits the displayed icon size to 48dp
                     .title(mContext.getResources().getString(R.string.hi)
@@ -1464,7 +1464,7 @@ public class AccountBookSettingActivity extends AppCompatActivity
 // whether sync the settings from server////////////////////////////////////////////////////////////
     private void whetherSyncSettingsFromServer() {
         new MaterialDialog.Builder(this)
-                .iconRes(R.drawable.cocoin_logo)
+                .iconRes(R.mipmap.ic_launcher)
                 .typeface(StatementDateUtil.GetTypeface(), StatementDateUtil.GetTypeface())
                 .limitIconToDefaultSize() // limits the displayed icon size to 48dp
                 .title(R.string.sync_dialog_title)

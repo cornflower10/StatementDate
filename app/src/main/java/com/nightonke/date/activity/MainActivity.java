@@ -34,24 +34,28 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.github.johnpersano.supertoasts.SuperActivityToast;
 import com.github.johnpersano.supertoasts.SuperToast;
-import com.nightonke.saver.R;
+import com.kuaiyou.loader.AdViewBannerManager;
+import com.kuaiyou.loader.AdViewInstlManager;
+import com.kuaiyou.loader.loaderInterface.AdViewBannerListener;
+import com.kuaiyou.loader.loaderInterface.AdViewInstlListener;
 import com.nightonke.date.adapter.ButtonGridViewAdapter;
 import com.nightonke.date.adapter.EditMoneyRemarkFragmentAdapter;
 import com.nightonke.date.adapter.TagChooseFragmentAdapter;
 import com.nightonke.date.fragment.CoCoinFragmentManager;
 import com.nightonke.date.fragment.TagChooseFragment;
 import com.nightonke.date.model.AppUpdateManager;
-import com.nightonke.date.model.StatementDateRecord;
 import com.nightonke.date.model.RecordManager;
 import com.nightonke.date.model.SettingManager;
+import com.nightonke.date.model.StatementDateRecord;
 import com.nightonke.date.model.User;
-import com.nightonke.date.ui.StatementDateScrollableViewPager;
 import com.nightonke.date.ui.DummyOperation;
 import com.nightonke.date.ui.MyGridView;
+import com.nightonke.date.ui.StatementDateScrollableViewPager;
 import com.nightonke.date.ui.guillotine.animation.GuillotineAnimation;
 import com.nightonke.date.ui.guillotine.interfaces.GuillotineListener;
 import com.nightonke.date.util.StatementDateToast;
 import com.nightonke.date.util.StatementDateUtil;
+import com.nightonke.saver.R;
 import com.rey.material.widget.RadioButton;
 
 import java.util.Calendar;
@@ -135,6 +139,8 @@ public class MainActivity extends AppCompatActivity
     FrameLayout root;
     @InjectView(R.id.content_hamburger)
     View contentHamburger;
+    @InjectView(R.id.banner_layout)
+    LinearLayout linearLayout;
 
     private SensorManager sensorManager;
 
@@ -341,8 +347,60 @@ public class MainActivity extends AppCompatActivity
                     .show();
             SettingManager.getInstance().setShowMainActivityGuide(false);
         }
+
+
+        startAD();
     }
 
+
+
+    private void startAD(){
+
+        final AdViewInstlManager adInstlBIDView= new AdViewInstlManager (mContext, "SDK20161629040641z7snyxkrbndasty",
+                true);
+// 设置监听回调
+        adInstlBIDView. setOnAdViewListener(new AdViewInstlListener() {
+            @Override
+            public void onAdClicked() {
+
+            }
+
+            @Override
+            public void onAdDisplayed() {
+                Log.i("onAdDisplayed","onAdDisplayed");
+            }
+
+            @Override
+            public void onAdReceived() {
+             Log.i("onAdReceived","onAdReceived");
+            }
+
+            @Override
+            public void onAdFailedReceived(String s) {
+                Log.i("onAdFailedReceived",s);
+            }
+
+            @Override
+            public void onAdClosed() {
+
+            }
+
+            @Override
+            public void onAdReady() {
+                Log.i("onAdReady","onAdReady");
+                adInstlBIDView.showInstl(MainActivity.this);
+
+            }
+        });
+// 当成功接收到广告时 初始化插屏布局
+//        @Override
+//        public void onAdReceived() {
+//// 此时可以调用 展示插屏方法
+//            adInstlBIDView.showInstl(context)
+// 如果使用自定义插屏，如退屏广告 可使用 下面的方法， 获取广告 view ，自定义展示
+//adInstlBIDView.getDialogView();
+//        }
+    }
     private AdapterView.OnItemLongClickListener gridViewLongClickListener
             = new AdapterView.OnItemLongClickListener() {
         @Override
@@ -722,6 +780,54 @@ public class MainActivity extends AppCompatActivity
         isLoading = false;
         inputPassword = "";
         System.gc();
+
+
+        adBanner();
+
+
+    }
+
+    private void adBanner() {
+        AdViewBannerManager adViewBIDView = new AdViewBannerManager(this,
+                "SDK20161629040641z7snyxkrbndasty", AdViewBannerManager.BANNER_SMART, true);
+//		adViewBIDView.logMode=false;
+        adViewBIDView.setShowCloseBtn(true);
+        adViewBIDView.setRefreshTime(15);
+        adViewBIDView.setOpenAnim(true);
+        adViewBIDView.setOnAdViewListener(new AdViewBannerListener() {
+            @Override
+            public void onAdClicked() {
+
+            }
+
+            @Override
+            public void onAdDisplayed() {
+
+            }
+
+            @Override
+            public void onAdReceived() {
+
+            }
+
+            @Override
+            public void onAdFailedReceived(String s) {
+
+            }
+
+            @Override
+            public void onAdClosed() {
+                linearLayout.removeAllViews();
+                linearLayout.setVisibility(View.GONE);
+
+            }
+        });
+        if (null != linearLayout){
+            linearLayout.removeAllViews();
+            linearLayout.setVisibility(View.VISIBLE);
+            linearLayout.addView(adViewBIDView.getAdViewLayout());
+        }
+
     }
 
     @Override
